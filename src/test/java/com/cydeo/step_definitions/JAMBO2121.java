@@ -1,4 +1,4 @@
 package com.cydeo.step_definitions;
 
-public class JAMBO21 {
+public class JAMBO2121 {
 }
