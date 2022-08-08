@@ -1,4 +1,4 @@
 package com.cydeo.step_definitions;
 
-public class JamboProject {
+public class JamboProject11 {
 }
