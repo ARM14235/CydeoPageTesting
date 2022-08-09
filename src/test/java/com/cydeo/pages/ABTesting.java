@@ -5,14 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BasePage {
+public class ABTesting {
 
-     public BasePage(){
+     public ABTesting(){
          PageFactory.initElements(Driver.getDriver(),this);
      }
 
     @FindBy(xpath = "//a[.='A/B Testing']")
     public WebElement ABTesting;
+
 
      @FindBy(xpath="//h3[.='No A/B Test']")
     public WebElement NoABTest;

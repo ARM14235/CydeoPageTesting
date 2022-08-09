@@ -1,5 +1,6 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -12,14 +13,15 @@ import java.util.List;
 public class Hooks {
 
 
-    // @Before is coming from cucumber. It is running before each scenario
+
     @Before
-    public void setUpScenario(){
-        System.out.println("--> It is coming from @Before in Hooks ");
+    public void user_is_on_cydeo_practice_page() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("web.app.url"));
+
     }
 
 
-    // @After is coming from cucumber. It is running after each scenario
+
     @After
     public void teardownScenario(Scenario scenario){
         System.out.println("--> It is coming from @After in Hooks ");

@@ -1,7 +1,6 @@
 Feature: Cydeo Practice Page Test
 
   Background:
-    Given User is on Cydeo Practice Page
 
   @smoke
   Scenario:
