@@ -17,7 +17,7 @@ public class Hooks {
     @Before
     public void user_is_on_cydeo_practice_page() {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("YahooPage"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("web.app.url"));
 
     }
 
@@ -25,8 +25,6 @@ public class Hooks {
 
     @After
     public void teardownScenario(Scenario scenario){
-        System.out.println("--> It is coming from @After in Hooks ");
-
 
         if(scenario.isFailed()) {
 
