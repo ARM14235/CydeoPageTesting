@@ -13,11 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features" ,
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@wip"
 )
 public class CukesRunner {
 }
-
-//How Jenkins Work
-//What are utility Methods
-// Creat Object of The class rather than extending it.
