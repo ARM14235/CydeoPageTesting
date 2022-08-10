@@ -14,14 +14,15 @@ import java.security.Key;
 public class NextBaseStepDef {
     BasePage basePage = new BasePage();
 
-    @When("user Enter incorrect username: “incorrect”")
-    public void user_enter_incorrect_username_incorrect() {
+    @When("user Enter incorrect username: incorrect")
+    public void userEnterIncorrectUsernameIncorrect() {
         basePage.userName.sendKeys("incorrect" + Keys.ENTER);
     }
 
 
-    @When("user Enter incorrect password: “incorrect”")
-    public void user_enter_incorrect_password_incorrect() {
+
+    @When("user Enter incorrect password: incorrect")
+    public void userEnterIncorrectPasswordIncorrect() {
         basePage.password.sendKeys("incorrect" + Keys.ENTER);
     }
 
@@ -43,4 +44,7 @@ public class NextBaseStepDef {
 
     }
 
-}
+
+    }
+
+
