@@ -17,7 +17,7 @@ public class Hooks {
     @Before
     public void user_is_on_cydeo_practice_page() {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("googlePage"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("cydeoURL"));
 
     }
 

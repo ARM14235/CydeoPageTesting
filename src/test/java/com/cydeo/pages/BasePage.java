@@ -11,23 +11,26 @@ public class BasePage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(xpath="(//input[@class='login-inp'])[1]")
-        public WebElement userName;
+        @FindBy(xpath="//a[@class='nav-link']")
+        public WebElement home;
 
-        @FindBy(xpath = "(//input[@class='login-inp'])[2]")
-        public WebElement password;
+        @FindBy(xpath = "//h2[.='Forgot Password']")
+        public WebElement forgotPassword;
 
-        @FindBy(xpath = "//input[@class='login-btn']")
-        public WebElement loginBtn;
+        @FindBy(xpath = "//label[.='E-mail']")
+        public WebElement emailText;
 
-        @FindBy(xpath = "//div[@class='errortext']")
-        public WebElement errorMsg;
-
-        //----------
+        @FindBy(xpath = "//input[@type='text']")
+        public WebElement emailBox;
 
 
-        @FindBy(xpath="(//a[@class='gb_d'])[1]")
-        public WebElement gmailLink;
+        @FindBy(xpath="//button[@type='submit']")
+        public WebElement retrievePassBtn;
+
+
+        @FindBy(xpath="//div[@style='text-align: center;']")
+        public WebElement poweredByCydeo;
+
 
 
 
