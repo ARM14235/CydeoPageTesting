@@ -11,11 +11,17 @@ public class BasePage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(xpath="//button[.='View all orders']")
-        public WebElement viewAllOrders;
+        @FindBy(xpath="(//input[@class='login-inp'])[1]")
+        public WebElement userName;
 
+        @FindBy(xpath = "(//input[@class='login-inp'])[2]")
+        public WebElement password;
 
+        @FindBy(xpath = "//input[@class='login-btn']")
+        public WebElement loginBtn;
 
+        @FindBy(xpath = "//div[@class='errortext']")
+        public WebElement errorMsg;
 }
 
 
