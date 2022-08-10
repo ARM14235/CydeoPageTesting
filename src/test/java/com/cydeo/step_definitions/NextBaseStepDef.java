@@ -16,7 +16,8 @@ public class NextBaseStepDef {
 
     @When("user Enter incorrect username: incorrect")
     public void userEnterIncorrectUsernameIncorrect() {
-        basePage.userName.sendKeys("incorrect" + Keys.ENTER);
+    basePage.userName.sendKeys("incorrect" + Keys.ENTER);
+
     }
 
 

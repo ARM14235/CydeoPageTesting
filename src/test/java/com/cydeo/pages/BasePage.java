@@ -22,6 +22,15 @@ public class BasePage {
 
         @FindBy(xpath = "//div[@class='errortext']")
         public WebElement errorMsg;
+
+        //----------
+
+
+        @FindBy(xpath="(//a[@class='gb_d'])[1]")
+        public WebElement gmailLink;
+
+
+
 }
 
 
