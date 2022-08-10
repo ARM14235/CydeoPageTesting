@@ -14,7 +14,7 @@ public class BasePage {
         }
 
         @FindBy(tagName = "a")
-        public List <WebElement> allLinks;
+        public WebElement allLinks;
 
 //        @FindBy(xpath = "")
 //        public WebElement forgotPassword;
