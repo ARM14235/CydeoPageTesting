@@ -12,31 +12,33 @@ public class StepDefPracticeClass {
 
 BasePage basePage = new BasePage();
 
+    @Given("Click to Add Element button")
+    public void click_to_add_element_button() {
+        basePage.addElement.click();
 
+    }
 
-    @Given("Confirm checkbox #{int} is NOT selected by default")
-    public void confirm_checkbox_is_not_selected_by_default(Integer int1) {
-        basePage.checkBox1.isSelected();
+    @When("Verify Delete button is displayed after clicking.")
+    public void verify_delete_button_is_displayed_after_clicking() {
+    basePage.deleteBtn.isDisplayed();
+
     }
-    @When("Confirm checkbox #{int} is SELECTED by default.")
-    public void confirm_checkbox_is_selected_by_default(Integer int1) {
-        basePage.checkBox2.isSelected();
+
+    @When("Click to Delete button.")
+    public void click_to_delete_button() {
+    basePage.deleteBtn.click();
+
     }
-    @When("Click checkbox #{int} to select it.")
-    public void click_checkbox_to_select_it(Integer int1) {
-    basePage.checkBox1.click();
+
+    @Then("Verify Delete button is NOT displayed after clicking.")
+    public void verify_delete_button_is_not_displayed_after_clicking() {
+
+        try {
+            System.out.println("basePage.deleteBtn.isDisplayed() = " + basePage.deleteBtn.isDisplayed());
+        }catch (Exception e){
+            System.out.println("Exception handled ");
+        }
     }
-    @When("Click checkbox #{int} to deselect it.")
-    public void click_checkbox_to_deselect_it(Integer int1) {
-    basePage.checkBox2.click();
-    }
-    @When("Confirm checkbox #{int} is SELECTED.")
-    public void confirm_checkbox_is_selected(Integer int1) {
-    basePage.checkBox1.isSelected();
-    }
-    @Then("Confirm checkbox #{int} is NOT selected.")
-    public void confirm_checkbox_is_not_selected(Integer int1) {
-    basePage.checkBox2.isSelected();
-    }
+
 
 }
