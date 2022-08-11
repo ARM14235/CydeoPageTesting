@@ -1,9 +1,13 @@
 Feature: JamboTestingLab
 
 @wip
-  Scenario: JamboTestingLab, given all the links are in pages
+  Scenario: JamboTestingLab
 
-Given Print out the number of the links on the page.
-When Print out the texts of the links.
 
+Given Confirm checkbox #1 is NOT selected by default
+When Confirm checkbox #2 is SELECTED by default.
+And Click checkbox #1 to select it.
+And Click checkbox #2 to deselect it.
+And Confirm checkbox #1 is SELECTED.
+Then Confirm checkbox #2 is NOT selected.
 

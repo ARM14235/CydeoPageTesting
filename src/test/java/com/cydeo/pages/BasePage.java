@@ -13,11 +13,11 @@ public class BasePage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(tagName = "a")
-        public WebElement allLinks;
+        @FindBy(xpath = "//input[@name='checkbox1']")
+        public WebElement checkBox1;
 
-//        @FindBy(xpath = "")
-//        public WebElement forgotPassword;
+        @FindBy(xpath = "//input[@name='checkbox2']")
+        public WebElement checkBox2;
 //
 //        @FindBy(xpath = "//label[.='E-mail']")
 //        public WebElement emailText;
