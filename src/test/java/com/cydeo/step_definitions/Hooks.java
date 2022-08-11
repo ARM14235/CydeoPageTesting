@@ -12,8 +12,6 @@ import java.util.List;
 
 public class Hooks {
 
-
-
     @Before
     public void user_is_on_cydeo_practice_page() {
 

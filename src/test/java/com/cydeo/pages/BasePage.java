@@ -13,25 +13,25 @@ public class BasePage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(xpath = "//button[.='Add Element']")
-        public WebElement addElement;
+        @FindBy(xpath = "//select[@id='dropdown']")
+        public WebElement simpleDrop;
 
-        @FindBy(xpath = "//button[.='Delete']")
-        public WebElement deleteBtn;
+        @FindBy(xpath = "//select[@id='state']")
+        public WebElement stateSelection;
 //
-//        @FindBy(xpath = "//label[.='E-mail']")
-//        public WebElement emailText;
+//        @FindBy(xpath = "//label[@for='special-offers-free-shipping']")
+//        public WebElement freeShipping;
 //
-//        @FindBy(xpath = "//input[@type='text']")
-//        public WebElement emailBox;
-//
-//
-//        @FindBy(xpath="//button[@type='submit']")
-//        public WebElement retrievePassBtn;
+//        @FindBy(xpath = "//label[contains(text(),'Under $25')]")
+//        public WebElement under$25;
 //
 //
-//        @FindBy(xpath="//div[@style='text-align: center;']")
-//        public WebElement poweredByCydeo;
+//        @FindBy(xpath="//span[contains(text(),'results,')]")
+//        public WebElement result;
+//
+//
+//        @FindBy(xpath="//button[@aria-label='Apply']")
+//        public WebElement applyBtno;
 
 
 
