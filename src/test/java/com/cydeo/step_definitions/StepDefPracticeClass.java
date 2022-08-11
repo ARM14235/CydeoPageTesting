@@ -2,6 +2,7 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.BasePage;
 import com.cydeo.utilities.Driver;
+import com.sun.source.tree.AssertTree;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,18 +13,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class StepDefPracticeClass {
+BasePage basePage = new BasePage();
+Select multiSelc = new Select(basePage.multiple);
 
-    BasePage basePage = new BasePage();
+    @When("Select all the options from multiple select dropdown.")
+    public void select_all_the_options_from_multiple_select_dropdown() {
+        for (WebElement each : multiSelc.getOptions()) {
+            each.click();
+            System.out.println(each.getText());
+            multiSelc.deselectAll();
 
-    @Given("Verify Simple dropdown default selected value is correct Expected: Please select an option")
-    public void verify_simple_dropdown_default_selected_value_is_correct_expected_please_select_an_option() {
-    Select simpleDropDown = new Select(basePage.simpleDrop);
-
-        Assert.assertEquals("Please select an option", simpleDropDown.getFirstSelectedOption().getText());
+        }
     }
-    @Given("Verify State selection default selected value is correct. Expected: Select a State")
-    public void verify_state_selection_default_selected_value_is_correct_expected_select_a_state() {
-    Select StateSelect = new Select(basePage.stateSelection);
-    Assert.assertEquals("Select a State", basePage.stateSelection.getText());
     }
-}
