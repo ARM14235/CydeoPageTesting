@@ -31,7 +31,7 @@ BasePage basePage = new BasePage();
     myAlert.accept();
     }
 
-    @Then("Verify “You entered:  hello text is displayed.")
+    @Then("Verify You entered:  hello text is displayed.")
     public void verify_you_entered_hello_text_is_displayed() {
     Assert.assertEquals("You entered: hello", basePage.jsMsg.getText());
 
