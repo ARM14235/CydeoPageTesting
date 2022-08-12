@@ -18,22 +18,20 @@ import java.security.Key;
 public class StepDefPracticeClass {
 BasePage basePage = new BasePage();
 
-    @When("Click to Click for JS Prompt button")
-    public void click_to_click_for_js_prompt_button() {
-    basePage.jsPrompt.click();
-
+    @When("Clear text from comment body")
+    public void clear_text_from_comment_body() {
+ Driver.getDriver().switchTo().frame(basePage.myFrame);
+        basePage.bdyText.clear();
+        basePage.bdyText.sendKeys("Hello World");
     }
 
-    @When("Send hello text to alert")
-    public void send_hello_text_to_alert() {
-        Alert myAlert = Driver.getDriver().switchTo().alert();
-    myAlert.sendKeys("hello");
-    myAlert.accept();
+    @Then("Verify Hello World text is written in comment body")
+    public void verify_hello_world_text_is_written_in_comment_body() {
+Assert.assertEquals("Hello World", basePage.bdyText.getText());
     }
-
-    @Then("Verify You entered:  hello text is displayed.")
-    public void verify_you_entered_hello_text_is_displayed() {
-    Assert.assertEquals("You entered: hello", basePage.jsMsg.getText());
-
+    @Then("Verify header An iFrame containing the TinyMCE WYSIWYG Editor is displayed")
+    public void verify_header_an_i_frame_containing_the_tiny_mce_wysiwyg_editor_is_displayed() {
+Driver.getDriver().switchTo().parentFrame();
+Assert.assertTrue(basePage.hdrText.getText().contains("TinyMCE WYSIWYG Editor"));
     }
     }

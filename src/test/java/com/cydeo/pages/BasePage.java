@@ -13,17 +13,18 @@ public class BasePage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(xpath = "//p[@id='result']")
-        public WebElement jsMsg;
+        @FindBy(xpath = "//h3[contains(text(),'WYSIWYG Editor')]")
+        public WebElement hdrText;
 
-        @FindBy(xpath = "//button[@onclick='jsPrompt()']")
-        public WebElement jsPrompt;
-//
-//        @FindBy(xpath = "//label[@for='special-offers-free-shipping']")
-//        public WebElement freeShipping;
-//
-//        @FindBy(xpath = "//label[contains(text(),'Under $25')]")
-//        public WebElement under$25;
+        @FindBy(id = "tinymce")
+        public WebElement bdyText;
+
+
+        @FindBy(xpath = "//iframe[@id='mce_0_ifr']")
+        public WebElement myFrame;
+
+//        @FindBy(xpath = "//p[.='sdf']")
+//        public WebElement otherBody;
 //
 //
 //        @FindBy(xpath="//span[contains(text(),'results,')]")
