@@ -13,11 +13,11 @@ public class BasePage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(xpath = "//select[@name='Languages']")
-        public WebElement multiple;
+        @FindBy(xpath = "//p[@id='result']")
+        public WebElement jsMsg;
 
-//        @FindBy(xpath = "")
-//        public WebElement stateSelection;
+        @FindBy(xpath = "//button[@onclick='jsPrompt()']")
+        public WebElement jsPrompt;
 //
 //        @FindBy(xpath = "//label[@for='special-offers-free-shipping']")
 //        public WebElement freeShipping;
