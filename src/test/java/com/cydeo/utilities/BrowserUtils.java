@@ -1,5 +1,6 @@
 package com.cydeo.utilities;
 
+import com.cydeo.pages.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -54,6 +55,8 @@ public class BrowserUtils {
         Assert.assertEquals(driver.getTitle(),expectedTitle);
 
      }
+
+
 
 
      public static void waitForInvisibilityOf(WebElement element){
@@ -133,6 +136,8 @@ public class BrowserUtils {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
+
+
 
     /**
      * return a list of string from a list of elements
@@ -471,7 +476,13 @@ public class BrowserUtils {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+    public static void baseLogin(String userName, String password){
+        BasePage basePageUtils = new BasePage();
 
+        basePageUtils.logInBox.sendKeys(userName);
+        basePageUtils.passBox.sendKeys(password);
+        basePageUtils.logInBtn.click();
+    }
 }
 
 

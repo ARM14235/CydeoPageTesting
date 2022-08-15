@@ -9,31 +9,45 @@ import java.util.List;
 
 public class BasePage {
 
-        public BasePage(){
+        public  BasePage(){
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-        @FindBy(xpath = "//h3[contains(text(),'WYSIWYG Editor')]")
-        public WebElement hdrText;
-
-        @FindBy(id = "tinymce")
-        public WebElement bdyText;
 
 
-        @FindBy(xpath = "//iframe[@id='mce_0_ifr']")
-        public WebElement myFrame;
+        @FindBy(xpath = "//span[contains(@id,'link-text')]")
+        public WebElement moreBtn;
 
-//        @FindBy(xpath = "//p[.='sdf']")
-//        public WebElement otherBody;
-//
-//
-//        @FindBy(xpath="//span[contains(text(),'results,')]")
-//        public WebElement result;
-//
-//
-//        @FindBy(xpath="//button[@aria-label='Apply']")
-//        public WebElement applyBtno;
 
+        @FindBy(xpath="//span[.='Appreciation']")
+        public WebElement apprecBtn;
+
+
+        @FindBy(xpath="//body[@contenteditable='true']")
+        public WebElement msgBox;
+
+        @FindBy(xpath="//div[starts-with(@id,'blog_post_body')]")
+        public WebElement msgFeed;
+
+
+        @FindBy(xpath="//button[@id='blog-submit-button-save']")
+        public WebElement sendKey;
+
+
+
+
+
+
+        //LOG IN ELEMENTS
+        @FindBy(xpath = "(//input[@class='login-inp'])[1]")
+        public WebElement logInBox;
+
+        @FindBy(xpath = "(//input[@class='login-inp'])[2]")
+        public  WebElement passBox;
+
+
+        @FindBy(xpath = "//input[@type='submit']")
+        public  WebElement logInBtn;
 
 
 

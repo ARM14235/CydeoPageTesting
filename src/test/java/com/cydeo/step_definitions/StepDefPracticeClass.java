@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.BasePage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import com.sun.source.tree.AssertTree;
 import io.cucumber.java.en.Given;
@@ -16,22 +17,38 @@ import org.openqa.selenium.support.ui.Select;
 import java.security.Key;
 
 public class StepDefPracticeClass {
-BasePage basePage = new BasePage();
+    BasePage basePage = new BasePage();
 
-    @When("Clear text from comment body")
-    public void clear_text_from_comment_body() {
- Driver.getDriver().switchTo().frame(basePage.myFrame);
-        basePage.bdyText.clear();
-        basePage.bdyText.sendKeys("Hello World");
-    }
 
-    @Then("Verify Hello World text is written in comment body")
-    public void verify_hello_world_text_is_written_in_comment_body() {
-Assert.assertEquals("Hello World", basePage.bdyText.getText());
-    }
-    @Then("Verify header An iFrame containing the TinyMCE WYSIWYG Editor is displayed")
-    public void verify_header_an_i_frame_containing_the_tiny_mce_wysiwyg_editor_is_displayed() {
-Driver.getDriver().switchTo().parentFrame();
-Assert.assertTrue(basePage.hdrText.getText().contains("TinyMCE WYSIWYG Editor"));
-    }
+        @Given("Login Homepage Login with valid username and password")
+        public void login_homepage_login_with_valid_username_and_password() {
+            BrowserUtils.baseLogin("helpdesk1@cybertekschool.com", "UserUser");
+
+        }
+        @When("Click the MORE tab and select APPRECIATION")
+        public void click_the_more_tab_and_select_appreciation() {
+          basePage.moreBtn.click();
+          basePage.apprecBtn.click();
+
+        }
+        @When("Write an Appreciation message")
+        public void write_an_appreciation_message() {
+            Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.cssSelector(".bx-editor-iframe")));
+           basePage.msgBox.sendKeys("jUnitPractice");
+
+        }
+        @When("Click the SEND button")
+        public void click_the_send_button() {
+            Driver.getDriver().switchTo().parentFrame();
+        basePage.sendKey.click();
+
+        }
+        @Then("Verify the Appreciation message is displayed on the feed")
+        public void verify_the_appreciation_message_is_displayed_on_the_feed() {
+        String actual = basePage.msgFeed.getText();
+        String expected = "jUnitPractice";
+        Assert.assertEquals(expected, actual);
+
+        }
+
     }

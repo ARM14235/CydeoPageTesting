@@ -1,5 +1,6 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.After;
@@ -15,8 +16,7 @@ public class Hooks {
     @Before
     public void user_is_on_cydeo_practice_page() {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("cydeoURL"));
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("nextBaseCRM"));
     }
 
 
