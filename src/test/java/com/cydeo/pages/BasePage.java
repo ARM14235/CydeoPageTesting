@@ -15,39 +15,60 @@ public class BasePage {
 
 
 
-        @FindBy(xpath = "//span[contains(@id,'link-text')]")
-        public WebElement moreBtn;
+        @FindBy(xpath = "//a[.='Order']")
+        public WebElement ordersBtn;
 
 
-        @FindBy(xpath="//span[.='Appreciation']")
-        public WebElement apprecBtn;
+        @FindBy(xpath="//select[contains(@name,'ctl00$Main')]")
+        public WebElement familySelectionBar;
 
 
-        @FindBy(xpath="//body[@contenteditable='true']")
-        public WebElement msgBox;
+        @FindBy(xpath="//input[@type='submit']")
+        public WebElement calculateBtn;
 
-        @FindBy(xpath="//div[starts-with(@id,'blog_post_body')]")
-        public WebElement msgFeed;
-
-
-        @FindBy(xpath="//button[@id='blog-submit-button-save']")
-        public WebElement sendKey;
+        @FindBy(xpath="//input[contains(@name,'Order$txtName')]")
+        public WebElement customerName;
 
 
+        @FindBy(xpath="//input[contains(@name,'TextBox2')]")
+        public WebElement street;
 
+        @FindBy(xpath="//input[contains(@name,'der$TextBox3')]")
+        public WebElement city;
+
+
+        @FindBy(xpath="//input[contains(@name,'der$TextBox4')]")
+        public WebElement state;
+
+        @FindBy(xpath="//input[contains(@id,'nt_fmwOrder_TextBox5')]")
+        public WebElement zip;
+
+
+        @FindBy(xpath="(//input[@type='radio'])[1]")
+        public WebElement visa;
+
+        @FindBy(xpath="//input[contains(@name,'r$TextBox6')]")
+        public WebElement cardNumber;
+
+
+        @FindBy(xpath="//input[contains(@name,'rder$TextBox1')]")
+        public WebElement expDate;
+
+        @FindBy(xpath="//a[.='Process']")
+        public WebElement process;
 
 
 
         //LOG IN ELEMENTS
-        @FindBy(xpath = "(//input[@class='login-inp'])[1]")
-        public WebElement logInBox;
+        @FindBy(xpath = "//input[@type='text']")
+        public WebElement userName;
 
-        @FindBy(xpath = "(//input[@class='login-inp'])[2]")
-        public  WebElement passBox;
+        @FindBy(xpath = "//input[@type='password']")
+        public  WebElement password;
 
 
         @FindBy(xpath = "//input[@type='submit']")
-        public  WebElement logInBtn;
+        public  WebElement logIn;
 
 
 

@@ -479,9 +479,9 @@ public class BrowserUtils {
     public static void baseLogin(String userName, String password){
         BasePage basePageUtils = new BasePage();
 
-        basePageUtils.logInBox.sendKeys(userName);
-        basePageUtils.passBox.sendKeys(password);
-        basePageUtils.logInBtn.click();
+        basePageUtils.userName.sendKeys(userName);
+        basePageUtils.password.sendKeys(password);
+        basePageUtils.logIn.click();
     }
 }
 
